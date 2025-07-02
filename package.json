@@ -6,14 +6,16 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "run:all": "concurrently \"npm run dev\" \"npm run dev:sspa --prefix ../mfe-app-test-monthly\" \"npm run dev --prefix ../mfe-app-test-shared\" \"npm run build --prefix ../mfe-app-test-yearly\" \"npm run preview --prefix ../mfe-app-test-yearly\"",
-    "build:all": "npm run build && npm run build --prefix ../mfe-app-test-shared && npm run build --prefix ../mfe-app-test-monthly && npm run build --prefix ../mfe-app-test-yearly",
-    "serve:all": "concurrently \"PORT=8089 node ./server.js\" \"PORT=5174 node ../mfe-app-test-shared/server.js\" \"PORT=4101 node ../mfe-app-test-monthly/server.js\" \"PORT=4104 node ../mfe-app-test-yearly/server.js\"",
+    "run:all": "concurrently \"npm run dev\" \"npm run dev:sspa --prefix ../mfe-test-app-monthly\" \"npm run dev --prefix ../mfe-test-app-shared\" \"npm run prebuild --prefix ../mfe-test-app-yearly\" \"npm run preview --prefix ../mfe-test-app-yearly\"",
+    "build:all": "npm run build && npm run build --prefix ../mfe-test-app-shared && npm run build --prefix ../mfe-test-app-monthly && npm run build --prefix ../mfe-test-app-yearly",
+    "serve:all": "concurrently \"PORT=8089 node ./server.js\" \"PORT=5174 node ../mfe-test-app-shared/server.js\" \"PORT=4101 node ../mfe-test-app-monthly/server.js\" \"PORT=4104 node ../mfe-test-app-yearly/server.js\"",
     "preview": "vite preview",
     "lint": "eslint . --fix",
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
     "pinia": "^3.0.2",
     "single-spa": "^6.0.3",
     "single-spa-vue": "^3.0.1",
@@ -27,6 +29,7 @@
     "@originjs/vite-plugin-federation": "^1.4.1",
     "@vitejs/plugin-vue": "^5.2.3",
     "@vue/eslint-config-prettier": "^10.2.0",
+    "concurrently": "^9.2.0",
     "eslint": "^9.22.0",
     "eslint-plugin-vue": "~10.0.0",
     "globals": "^16.0.0",
