@@ -1,0 +1,39 @@
+{
+  "name": "root",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "run:all": "concurrently \"npm run dev\" \"npm run dev:sspa --prefix ../monthly\" \"npm run dev --prefix ../shared\" \"npm run build --prefix ../yearly\" \"npm run preview --prefix ../yearly\"",
+    "build:all": "npm run build && npm run build --prefix ../shared && npm run build --prefix ../monthly && npm run build --prefix ../yearly",
+    "preview": "vite preview",
+    "lint": "eslint . --fix",
+    "format": "prettier --write src/"
+  },
+  "dependencies": {
+    "pinia": "^3.0.2",
+    "single-spa": "^6.0.3",
+    "single-spa-vue": "^3.0.1",
+    "vite-plugin-single-spa": "^1.0.0",
+    "vue": "^3.5.13",
+    "vue-router": "^4.5.0",
+    "vuetify": "^3.8.6"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.22.0",
+    "@originjs/vite-plugin-federation": "^1.4.1",
+    "@vitejs/plugin-vue": "^5.2.3",
+    "@vue/eslint-config-prettier": "^10.2.0",
+    "eslint": "^9.22.0",
+    "eslint-plugin-vue": "~10.0.0",
+    "globals": "^16.0.0",
+    "prettier": "3.5.3",
+    "vite": "^6.2.4",
+    "vite-plugin-externalize-dependencies": "^1.0.1",
+    "vite-plugin-externals": "^0.6.2",
+    "vite-plugin-vue-devtools": "^7.7.2",
+    "vite-plugin-vuetify": "^2.1.1"
+  }
+}
