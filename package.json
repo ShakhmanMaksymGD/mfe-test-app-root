@@ -6,8 +6,9 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "run:all": "concurrently \"npm run dev\" \"npm run dev:sspa --prefix ../monthly\" \"npm run dev --prefix ../shared\" \"npm run build --prefix ../yearly\" \"npm run preview --prefix ../yearly\"",
-    "build:all": "npm run build && npm run build --prefix ../shared && npm run build --prefix ../monthly && npm run build --prefix ../yearly",
+    "run:all": "concurrently \"npm run dev\" \"npm run dev:sspa --prefix ../mfe-app-test-monthly\" \"npm run dev --prefix ../mfe-app-test-shared\" \"npm run build --prefix ../mfe-app-test-yearly\" \"npm run preview --prefix ../mfe-app-test-yearly\"",
+    "build:all": "npm run build && npm run build --prefix ../mfe-app-test-shared && npm run build --prefix ../mfe-app-test-monthly && npm run build --prefix ../mfe-app-test-yearly",
+    "serve:all": "concurrently \"PORT=8089 node ./server.js\" \"PORT=5174 node ../mfe-app-test-shared/server.js\" \"PORT=4101 node ../mfe-app-test-monthly/server.js\" \"PORT=4104 node ../mfe-app-test-yearly/server.js\"",
     "preview": "vite preview",
     "lint": "eslint . --fix",
     "format": "prettier --write src/"
