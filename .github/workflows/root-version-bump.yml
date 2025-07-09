@@ -45,8 +45,8 @@ jobs:
       - name: Install Deps
         run: npm ci
 
-      - name: PreBuild
-        run: npm run prebuild
+      - name: Build
+        run: npm run build
   bump-version:
     needs: build
     if: github.event.pull_request.merged == true
