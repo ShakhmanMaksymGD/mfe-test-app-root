@@ -43,5 +43,5 @@ jobs:
       - name: Install Deps
         run: npm ci
 
-      - name: Pre-build
-        run: npm run prebuild
+      - name: build
+        run: npm run build
