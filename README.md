@@ -16,20 +16,25 @@ See [Vite Configuration Reference](https://vite.dev/config/).
 npm install
 ```
 
-### Compile and Hot-Reload for Development
+### Run all MFE's (local development)
 
 ```sh
-npm run dev
+npm run run:all
 ```
 
-### Compile and Minify for Production
+Use http://localhost:5173/ to test root app with all embedded MFE's
+
+
+### Build all MFE's with actual remote app versions
 
 ```sh
-npm run build
+npm run build:all
 ```
 
-### Lint with [ESLint](https://eslint.org/)
+### Serve all MFE's (a server imitation)
 
 ```sh
-npm run lint
+npm run serve:all
 ```
+
+Use http://localhost:8089 to test root app with all embedded MFE's
